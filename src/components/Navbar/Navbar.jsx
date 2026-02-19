@@ -4,11 +4,11 @@ import { CoinContext } from "../../context/CoinContext";
 
 const Navbar = () => {
 
-    const {setCurrency} = useContext(CoinContext)
+    const {setCurrency} = useContext(CoinContext)  //yaha humne CoinContextProvider component ko import kiya hai jise hum globally use karenge
 
-    const handleCurrencyChange = (e) => {
-        switch (e.target.value) {
-            case "usd":
+    const handleCurrencyChange = (e) => {  //yaha humne handleCurrencyChange function banaya hai jisme humne select dropdown ke change hone par selected currency ko update karne ke liye setCurrency() method use kiya hai jise hum globally use karenge
+        switch (e.target.value) {  // yaha humne switch case statement use kiya hai jisme humne selected currency ke value ke basis par setCurrency() method ko call kiya hai jise hum globally use karenge
+            case "usd":  // agar selected currency ka value "usd" hai to setCurrency() method ko call karke currency state ko update karenge jise hum globally use karenge
                 setCurrency({name:"usd", symbol:"$"})
                 break;
             case "eur":
@@ -33,7 +33,7 @@ const Navbar = () => {
         <li>Blog</li>
       </ul>
       <div className="nav-right">
-        <select onChange={handleCurrencyChange}>
+        <select onChange={handleCurrencyChange}>  {/* yaha humne select dropdown banaya hai jisme humne onChange event handler me handleCurrencyChange function ko call kiya hai jise hum globally use karenge jisse jab bhi user select dropdown me currency change karega to handleCurrencyChange function call hoga jisme hum selected currency ko update karenge jise hum globally use karenge */}
           <option value="usd">USD</option>
           <option value="eur">EUR</option>
           <option value="inr">INR</option>
