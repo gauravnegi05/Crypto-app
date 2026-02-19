@@ -56,9 +56,9 @@ const CoinContextProvider = (props) => {
   return (
     // 7️⃣ Provider makes the context data available to all child components
     // Any component wrapped inside CoinContext.Provider can access this data
-    <CoinContext.Provider value={contextValue}>
-      {props.children}
-    </CoinContext.Provider> // yaha humne CoinContext.Provider component use kiya hai jisme humne value prop me contextValue object pass kiya hai jise hum globally use karenge aur props.children ko render kiya hai jise humare app ke sare components is context ke andar aayenge jisse wo is context ke data ko access kar sakte hai
+    <CoinContext.Provider value={contextValue}> {/* yaha humne CoinContext.Provider component use kiya hai jisme humne value prop me contextValue object pass kiya hai jise hum globally use karenge */}
+      {props.children} {/* yaha humne props.children ko render kiya hai jise humare app ke sare components is context ke andar aayenge jisse wo is context ke data ko access kar sakte hai */}
+    </CoinContext.Provider> // yaha humne CoinContext.Provider component ko close kiya hai jise hum globally use karenge
   );
 };
 

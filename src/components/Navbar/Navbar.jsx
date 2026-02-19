@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./Navbar.css";
 import { CoinContext } from "../../context/CoinContext";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -25,9 +26,11 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <img src="src\assets\logo.png" alt="logo" className="logo" />
+      <Link to="/">  {/* yaha humne Link component use kiya hai jisme humne to prop me "/" diya hai jise hum locally use karenge jisse jab bhi user navbar ke logo par click karega to usse home page par navigate karega jise hum locally use karenge */}
+      <p className="logo">Crypto App</p>
+      </Link>
       <ul>
-        <li>Home</li>
+        <li><Link to="/">Home</Link></li>
         <li>Features</li>
         <li>Pricing</li>
         <li>Blog</li>
@@ -39,7 +42,7 @@ const Navbar = () => {
           <option value="inr">INR</option>
         </select>
         <button>
-          Login <img src="src\assets\arrow_icon.png" alt="arrow icon" />
+          Login
         </button>
       </div>
     </div>
